@@ -15,15 +15,15 @@
 
 一个为初学者设计的 [Agent Skill](https://www.skills.sh/)，把"先核实再答 + 手把手辅导 + 协作沉淀成 howto"固化成 AI 的工作流。
 
-<p align="center">
-  <img src="./assets/hero.png" alt="A learner typing commands by hand — autocomplete off, AI explaining beside" width="900">
-</p>
-
 ---
 
 ## Why I built this
 
 我在学编程，做了一个反潮流的选择：**关掉 IDE 的自动补全，自己敲每一个字符**。
+
+<p align="center">
+  <img src="./assets/hero.png" alt="A learner typing commands by hand — autocomplete off, AI explaining beside" width="900">
+</p>
 
 我发现：AI 一键替我跑命令时，结果是对的、脑子是空的——**速度让我跳过了"消化"这一步**。
 

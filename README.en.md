@@ -15,15 +15,15 @@
 
 An [Agent Skill](https://www.skills.sh/) built for learners. It codifies *verify-first → step-by-step coaching → collaborative howto distillation* into the AI's workflow.
 
-<p align="center">
-  <img src="./assets/hero.png" alt="A learner typing commands by hand — autocomplete off, AI explaining beside" width="900">
-</p>
-
 ---
 
 ## Why I built this
 
 I'm learning to code, and I'm making a counter-cultural choice: **autocomplete off — I type every character myself.**
+
+<p align="center">
+  <img src="./assets/hero.png" alt="A learner typing commands by hand — autocomplete off, AI explaining beside" width="900">
+</p>
 
 Here's what I noticed: when the AI one-shots a command for me, the output is correct but my head is empty. **Speed lets me skip the "digestion" step.**
 
