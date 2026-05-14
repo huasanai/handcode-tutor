@@ -21,10 +21,6 @@ An [Agent Skill](https://www.skills.sh/) built for learners. It codifies *verify
 
 I'm learning to code, and I'm making a counter-cultural choice: **autocomplete off — I type every character myself.**
 
-<p align="center">
-  <img src="./assets/hero.png" alt="A learner typing commands by hand — autocomplete off, AI explaining beside" width="900">
-</p>
-
 Here's what I noticed: when the AI one-shots a command for me, the output is correct but my head is empty. **Speed lets me skip the "digestion" step.**
 
 So I flipped it. The AI is my teacher, explaining every flag and intent — but the muscle memory in my fingers has to be mine. I'll mistype, forget flags, mess up argument order. **Those mistakes are exactly where I learn.**
@@ -88,6 +84,10 @@ Don't lead with history. Don't lead with internals. Don't dump background.
 ### 5. Distill into reusable howtos
 
 After every hands-on session, the AI co-writes the whole experience into a `type: howto` Markdown: question list + key concepts + full flow + gotchas + further reading. Starts as `status: draft`, and **stays draft until the user explicitly says "looks good"** — preventing wishful-thinking "done."
+
+<p align="center">
+  <img src="./assets/hero.png" alt="A learner's cyberpunk workstation — terminal demo, AI assistant explaining, howto notes distilled" width="900">
+</p>
 
 ---
 

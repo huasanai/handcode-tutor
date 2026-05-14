@@ -21,10 +21,6 @@
 
 我在学编程，做了一个反潮流的选择：**关掉 IDE 的自动补全，自己敲每一个字符**。
 
-<p align="center">
-  <img src="./assets/hero.png" alt="A learner typing commands by hand — autocomplete off, AI explaining beside" width="900">
-</p>
-
 我发现：AI 一键替我跑命令时，结果是对的、脑子是空的——**速度让我跳过了"消化"这一步**。
 
 所以我反过来——让 AI 当老师讲清楚每个参数的意图，敲键盘的肌肉记忆留给自己。过程中会犯各种错，**但这些错恰恰是我进步的空间**。
@@ -88,6 +84,10 @@
 ### 5. 沉淀成可复用的 howto
 
 跑完每次实操，AI 协助把全过程写成 `type: howto` 的 Markdown：问题清单 + 关键概念 + 完整流程 + 踩坑总结 + 下一步深入。`status: draft` 起步，**用户没说"没问题"前不算定稿**——避免 AI 一厢情愿地说"完成了"。
+
+<p align="center">
+  <img src="./assets/hero.png" alt="A learner's cyberpunk workstation — terminal demo, AI assistant explaining, howto notes distilled" width="900">
+</p>
 
 ---
 
