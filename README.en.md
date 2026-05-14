@@ -145,47 +145,6 @@ handcode-tutor/
 
 ---
 
-## Image prompts
-
-<details>
-<summary>Expand image generation prompts (GPT-Image-2 / Midjourney / etc.)</summary>
-
-### Hero image (`assets/hero.png`) — same matrix-terminal style as the logo
-
-```
-Dark cyberpunk workspace at night. A learner viewed from behind, sitting at a
-sleek desk, fingers resting on a mechanical keyboard. The primary monitor in
-front of them shows a Matrix-style terminal session: pure black background with
-bright matrix-green characters (#00ff41), syntax-highlighted command in cyan
-(#5dd4f5), yellow (#f1fa8c), and orange (#ffb86c). The monitor casts a soft
-green glow on the desk and the learner's face. A small holographic AI assistant
-icon floats just beside the screen, pointing at a "--help" output panel with a
-faint cyan halo around it. On the keyboard's wrist rest, a small dimmed
-"autocomplete" indicator with a red ✗ — signaling the learner has deliberately
-turned autocomplete off.
-
-Requirements:
-- Palette: pure black background + matrix green / cyan / warm orange (same color system as logo.svg)
-- Terminal text must stay legible when README scales to 800px wide
-- Sparse composition: learner silhouette, terminal screen, AI hologram, keyboard — no decorative icons
-- Style: cyberpunk concept art, dark-mode aesthetic, clean and professional, not cluttered
-- Lighting: soft glow on both terminal text and AI hologram (matching the logo's feGaussianBlur)
-- Avoid: paper texture, warm-white backgrounds, hand-drawn line art (these are the old style — discontinued)
-
-Ratio: 16:9
-```
-
-### Logo (`assets/logo.svg`) — matrix-terminal style
-
-A full matrix-style terminal demo animation: left half is an RGB-glitch brand title; right half is a syntax-highlighted terminal that enacts the real hand-typed correction flow — "type the wrong command → red strike-through → backspace deletion → smooth color switch → append the fix → press Enter → success response". Two callout bubbles (red error / green verified) narrate the moment.
-
-For replicating or remixing this style, see `~/.claude/skills/push-github/assets/logo-styles/matrix-terminal.svg` and the deep-dive doc `narrative-animation-patterns.md`.
-Animation: headline fadeUp, sub follows after 0.7s, divider drawLine, cursor blinks infinitely.
-
-</details>
-
----
-
 ## Support & Connect
 
 ### Reach me

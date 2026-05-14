@@ -145,46 +145,6 @@ handcode-tutor/
 
 ---
 
-## 图片 prompts
-
-<details>
-<summary>展开生图 prompts（用 GPT-Image-2 或 Midjourney 等）</summary>
-
-### Hero 图（`assets/hero.png`）—— 与 logo 同 matrix-terminal 风格
-
-```
-Dark cyberpunk workspace at night. A learner viewed from behind, sitting at a
-sleek desk, fingers resting on a mechanical keyboard. The primary monitor in
-front of them shows a Matrix-style terminal session: pure black background with
-bright matrix-green characters (#00ff41), syntax-highlighted command in cyan
-(#5dd4f5), yellow (#f1fa8c), and orange (#ffb86c). The monitor casts a soft
-green glow on the desk and the learner's face. A small holographic AI assistant
-icon floats just beside the screen, pointing at a "--help" output panel with a
-faint cyan halo around it. On the keyboard's wrist rest, a small dimmed
-"autocomplete" indicator with a red ✗ — signaling the learner has deliberately
-turned autocomplete off.
-
-要求：
-- 主调：纯黑背景 + matrix 绿 / 青蓝 / 暖橙点缀（与 logo.svg 完全同色系）
-- 终端文字必须清晰可读——GitHub README 缩到 800px 宽时仍能辨认命令
-- 元素少而精：人物剪影、终端屏幕、AI hologram、键盘四件；不要装饰性图标
-- 风格：cyberpunk concept art，dark mode aesthetic，干净专业不杂乱
-- 光效：终端屏幕和 AI hologram 都带 soft glow（与 logo 的 feGaussianBlur 一致）
-- 不要：纸张感、暖白底、手绘线稿（这些是旧风格，已弃用）
-
-比例：16:9
-```
-
-### Logo（`assets/logo.svg`）—— matrix-terminal 风格
-
-完整的 matrix-style terminal 演示动画：左半 RGB-glitch 主品牌标题 + 右半 syntax-highlighted 终端，演绎"敲错命令 → 红色 strike 标注 → '退格删除' → 颜色平滑切换 → 追加修正字符 → 回车 → 成功响应"的真实手敲修正流程。两个气泡（红错 / 绿成功）穿插叙事。
-
-如需复制 / 重制此风格作品，参考 `~/.claude/skills/push-github/assets/logo-styles/matrix-terminal.svg` 和深度模式文档 `narrative-animation-patterns.md`。
-
-</details>
-
----
-
 ## 支持与交流
 
 ### 联系画伞
