@@ -1,0 +1,360 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 380" role="img" aria-label="handcode-tutor — learn by typing">
+  <title>handcode-tutor</title>
+  <desc>Big brand title on the left with RGB-glitch matrix aesthetic; a compact terminal on the right shows typing a command, catching a typo, fixing it, and getting a successful response — narrated by red/green callout bubbles.</desc>
+
+  <defs>
+    <radialGradient id="bgGlow" cx="78%" cy="50%" r="65%">
+      <stop offset="0%"  stop-color="#0a2415" stop-opacity="1"/>
+      <stop offset="60%" stop-color="#020806" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="1"/>
+    </radialGradient>
+
+    <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%"  stop-color="#00ff41"/>
+      <stop offset="55%" stop-color="#00ff41"/>
+      <stop offset="100%" stop-color="#5dd4f5"/>
+    </linearGradient>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="0.7" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="strongGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="2.2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <filter id="bubbleGlow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="1.5" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+
+    <style><![CDATA[
+      @keyframes fadeIn   { 0%{opacity:0;} 100%{opacity:1;} }
+      @keyframes fadeOut  { 0%{opacity:1;} 100%{opacity:0;} }
+      @keyframes fadeUp   { 0%{opacity:0; transform:translateY(8px);} 100%{opacity:1; transform:translateY(0);} }
+      @keyframes drawStroke { 0%{stroke-dashoffset:120;} 100%{stroke-dashoffset:0;} }
+      @keyframes blink    { 0%,49%{opacity:1;} 50%,100%{opacity:0;} }
+      @keyframes glitchJitter {
+        0%, 90%, 100% { transform: translate(-2.5px, 0); }
+        2%   { transform: translate(-2.5px, 1px); }
+        4%   { transform: translate(-2.5px, -1px); }
+        45%  { transform: translate(-2.5px, 0); }
+      }
+      @keyframes glitchJitterB {
+        0%, 90%, 100% { transform: translate(2.5px, 0); }
+        2%   { transform: translate(2.5px, -1px); }
+        4%   { transform: translate(2.5px, 1px); }
+      }
+      /* 亮-暗-亮-暗-消失：4 等分匀速 + 最后一段过渡到不可见。
+         一次性跑完整段动画，linear 缓动让 4 段节奏完全一致。 */
+      @keyframes blinkTwiceOut {
+        0%   { opacity: 1; }    /* 亮 */
+        25%  { opacity: 0.3; }  /* 暗 1 */
+        50%  { opacity: 1; }    /* 亮 */
+        75%  { opacity: 0.3; }  /* 暗 2 */
+        100% { opacity: 0; }    /* 结束（消失）*/
+      }
+
+      /* === Brand title (early appearance) === */
+      .brand-stack    { animation: fadeUp 0.8s cubic-bezier(0.16,1,0.3,1) 0.20s backwards; }
+      .ghost-cyan {
+        transform: translate(-2.5px, 0);
+        animation: glitchJitter 6s ease-in-out 2.0s infinite;
+      }
+      .ghost-red {
+        transform: translate(2.5px, 0);
+        animation: glitchJitterB 6s ease-in-out 2.0s infinite;
+      }
+      .brand-bar    { stroke-dasharray: 200; animation: drawStroke 0.7s cubic-bezier(0.16,1,0.3,1) 0.70s backwards; }
+      .brand-sub    { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 0.85s backwards; }
+      .brand-tag    { animation: fadeUp 0.7s cubic-bezier(0.16,1,0.3,1) 1.05s backwards; }
+      .brand-meta   { animation: fadeIn 0.6s ease 1.30s backwards; }
+
+      /* === Terminal frame === */
+      .terminal-frame { animation: fadeIn 0.5s ease 0.70s backwards; }
+
+      /* === Prefix "$ npx skills update " 20 chars === */
+      .c0  { animation: fadeIn 0.04s linear 1.30s backwards; }
+      .c1  { animation: fadeIn 0.04s linear 1.34s backwards; }
+      .c2  { animation: fadeIn 0.04s linear 1.38s backwards; }
+      .c3  { animation: fadeIn 0.04s linear 1.42s backwards; }
+      .c4  { animation: fadeIn 0.04s linear 1.46s backwards; }
+      .c5  { animation: fadeIn 0.04s linear 1.50s backwards; }
+      .c6  { animation: fadeIn 0.04s linear 1.54s backwards; }
+      .c7  { animation: fadeIn 0.04s linear 1.58s backwards; }
+      .c8  { animation: fadeIn 0.04s linear 1.62s backwards; }
+      .c9  { animation: fadeIn 0.04s linear 1.66s backwards; }
+      .c10 { animation: fadeIn 0.04s linear 1.70s backwards; }
+      .c11 { animation: fadeIn 0.04s linear 1.74s backwards; }
+      .c12 { animation: fadeIn 0.04s linear 1.78s backwards; }
+      .c13 { animation: fadeIn 0.04s linear 1.82s backwards; }
+      .c14 { animation: fadeIn 0.04s linear 1.86s backwards; }
+      .c15 { animation: fadeIn 0.04s linear 1.90s backwards; }
+      .c16 { animation: fadeIn 0.04s linear 1.94s backwards; }
+      .c17 { animation: fadeIn 0.04s linear 1.98s backwards; }
+      .c18 { animation: fadeIn 0.04s linear 2.02s backwards; }
+      .c19 { animation: fadeIn 0.04s linear 2.06s backwards; }
+
+      /* === WRONG PREFIX "larksuit" (red, 8 chars) ===
+         Parent fadeIn just before typing; fadeOut at color-switch moment (6.60s)
+         to transition into the yellow right-prefix. */
+      .wrong-prefix-text {
+        animation: fadeIn 0.05s linear 2.08s forwards,
+                   fadeOut 0.2s linear 6.60s forwards;
+      }
+      .w0  { animation: fadeIn 0.04s linear 2.10s backwards; }
+      .w1  { animation: fadeIn 0.04s linear 2.14s backwards; }
+      .w2  { animation: fadeIn 0.04s linear 2.18s backwards; }
+      .w3  { animation: fadeIn 0.04s linear 2.22s backwards; }
+      .w4  { animation: fadeIn 0.04s linear 2.26s backwards; }
+      .w5  { animation: fadeIn 0.04s linear 2.30s backwards; }
+      .w6  { animation: fadeIn 0.04s linear 2.34s backwards; }
+      .w7  { animation: fadeIn 0.04s linear 2.38s backwards; }
+
+      /* === WRONG TAIL "/cli -g" (red, 7 chars) ===
+         Parent fadeIn to enable children. Each tspan fades out individually
+         RIGHT-TO-LEFT to simulate manual backspace deletion. */
+      .wrong-tail-text {
+        animation: fadeIn 0.05s linear 2.40s forwards;
+      }
+      /* fadeIn while typing + fadeOut in reverse order (g first, / last) for backspace effect */
+      .w8  { animation: fadeIn 0.04s linear 2.42s backwards,
+                        fadeOut 0.15s linear 6.36s forwards; }   /* / (deleted last) */
+      .w9  { animation: fadeIn 0.04s linear 2.46s backwards,
+                        fadeOut 0.15s linear 6.30s forwards; }   /* c */
+      .w10 { animation: fadeIn 0.04s linear 2.50s backwards,
+                        fadeOut 0.15s linear 6.24s forwards; }   /* l */
+      .w11 { animation: fadeIn 0.04s linear 2.54s backwards,
+                        fadeOut 0.15s linear 6.18s forwards; }   /* i */
+      .w12 { animation: fadeIn 0.04s linear 2.58s backwards,
+                        fadeOut 0.15s linear 6.12s forwards; }   /* space */
+      .w13 { animation: fadeIn 0.04s linear 2.62s backwards,
+                        fadeOut 0.15s linear 6.06s forwards; }   /* - */
+      .w14 { animation: fadeIn 0.04s linear 2.66s backwards,
+                        fadeOut 0.15s linear 6.00s forwards; }   /* g (deleted first) */
+
+      /* Red strike-through */
+      .wrong-strike {
+        stroke-dasharray: 120;
+        animation: fadeIn 0.05s linear 2.78s forwards,
+                   drawStroke 0.3s ease 2.78s backwards,
+                   fadeOut 0.4s linear 5.55s forwards;
+      }
+
+      /* Bubble 1: red, "missing 'e'" — fadeIn, then "亮-暗-亮-暗-消失" linear */
+      .bubble-red {
+        animation: fadeIn 0.3s linear 3.15s forwards,
+                   blinkTwiceOut 2.5s linear 3.45s forwards;
+      }
+
+      /* === RIGHT PREFIX "larksuit" (yellow, 8 chars) ===
+         Color-switch: parent fadeIn at 6.60s (concurrent with wrong-prefix fadeOut).
+         The 'larksuit' text "changes color" from red to yellow seamlessly. */
+      .right-prefix-text {
+        animation: fadeIn 0.2s linear 6.60s forwards;
+      }
+
+      /* === RIGHT ADDED "e/cli -g" (8 chars) ===
+         After color switch completes (6.80s), user types the missing 'e' and re-types '/cli -g'.
+         Typewriter LEFT-TO-RIGHT at 40ms intervals. */
+      .re  { animation: fadeIn 0.04s linear 6.90s backwards; }   /* e — the fix */
+      .ra0 { animation: fadeIn 0.04s linear 6.94s backwards; }   /* / */
+      .ra1 { animation: fadeIn 0.04s linear 6.98s backwards; }   /* c */
+      .ra2 { animation: fadeIn 0.04s linear 7.02s backwards; }   /* l */
+      .ra3 { animation: fadeIn 0.04s linear 7.06s backwards; }   /* i */
+      .ra4 { animation: fadeIn 0.04s linear 7.10s backwards; }   /* space */
+      .ra5 { animation: fadeIn 0.04s linear 7.14s backwards; }   /* - */
+      .ra6 { animation: fadeIn 0.04s linear 7.18s backwards; }   /* g */
+
+      /* === Response "Updating larksuite/cli..." (25 chars) === starts after correction completes + 0.40s "Enter" pause */
+      .p0  { animation: fadeIn 0.04s linear 7.60s backwards; }
+      .p1  { animation: fadeIn 0.04s linear 7.64s backwards; }
+      .p2  { animation: fadeIn 0.04s linear 7.68s backwards; }
+      .p3  { animation: fadeIn 0.04s linear 7.72s backwards; }
+      .p4  { animation: fadeIn 0.04s linear 7.76s backwards; }
+      .p5  { animation: fadeIn 0.04s linear 7.80s backwards; }
+      .p6  { animation: fadeIn 0.04s linear 7.84s backwards; }
+      .p7  { animation: fadeIn 0.04s linear 7.88s backwards; }
+      .p8  { animation: fadeIn 0.04s linear 7.92s backwards; }
+      .p9  { animation: fadeIn 0.04s linear 7.96s backwards; }
+      .p10 { animation: fadeIn 0.04s linear 8.00s backwards; }
+      .p11 { animation: fadeIn 0.04s linear 8.04s backwards; }
+      .p12 { animation: fadeIn 0.04s linear 8.08s backwards; }
+      .p13 { animation: fadeIn 0.04s linear 8.12s backwards; }
+      .p14 { animation: fadeIn 0.04s linear 8.16s backwards; }
+      .p15 { animation: fadeIn 0.04s linear 8.20s backwards; }
+      .p16 { animation: fadeIn 0.04s linear 8.24s backwards; }
+      .p17 { animation: fadeIn 0.04s linear 8.28s backwards; }
+      .p18 { animation: fadeIn 0.04s linear 8.32s backwards; }
+      .p19 { animation: fadeIn 0.04s linear 8.36s backwards; }
+      .p20 { animation: fadeIn 0.04s linear 8.40s backwards; }
+      .p21 { animation: fadeIn 0.04s linear 8.44s backwards; }
+      .p22 { animation: fadeIn 0.04s linear 8.48s backwards; }
+      .p23 { animation: fadeIn 0.04s linear 8.52s backwards; }
+      .p24 { animation: fadeIn 0.04s linear 8.56s backwards; }
+
+      .new-prompt        { animation: fadeIn 0.2s linear 8.70s backwards; }
+      .term-final-cursor { animation: fadeIn 0.2s linear 8.75s backwards,
+                                       blink 0.9s steps(1) 8.95s infinite; }
+
+      /* Bubble 2: green "✓ verified" — identical to red bubble: fadeIn then "亮-暗-亮-暗-消失" linear */
+      .bubble-green {
+        animation: fadeIn 0.4s linear 8.95s backwards,
+                   blinkTwiceOut 2.5s linear 9.35s forwards;
+      }
+    ]]></style>
+  </defs>
+
+  <!-- ===== Background ===== -->
+  <rect width="1200" height="380" fill="url(#bgGlow)"/>
+
+  <!-- subtle scan lines -->
+  <g opacity="0.05">
+    <rect x="0" y="0"   width="1200" height="1" fill="#00ff41"/>
+    <rect x="0" y="378" width="1200" height="1" fill="#00ff41"/>
+  </g>
+
+  <!-- ===== LEFT: Brand area (x: 60-580) ===== -->
+  <g class="brand-stack">
+    <!-- prompt decoration -->
+    <text x="60" y="115" font-size="14" fill="#5dd4f5" opacity="0.5" letter-spacing="2"
+          font-family="ui-monospace, 'SF Mono', Menlo, monospace">// ~/skill</text>
+
+    <!-- Main title with RGB-split glitch effect -->
+    <g style="transform-origin: 60px 170px;">
+      <!-- Cyan ghost (left offset) -->
+      <text class="ghost-cyan" x="60" y="180" font-size="62" font-weight="700"
+            fill="#5dd4f5" opacity="0.55" letter-spacing="-1"
+            font-family="ui-monospace, 'SF Mono', Menlo, monospace">handcode-tutor</text>
+      <!-- Red ghost (right offset) -->
+      <text class="ghost-red" x="60" y="180" font-size="62" font-weight="700"
+            fill="#ff5577" opacity="0.4" letter-spacing="-1"
+            font-family="ui-monospace, 'SF Mono', Menlo, monospace">handcode-tutor</text>
+      <!-- Main green title with strong glow -->
+      <text x="60" y="180" font-size="62" font-weight="700"
+            fill="url(#titleGrad)" filter="url(#strongGlow)" letter-spacing="-1"
+            font-family="ui-monospace, 'SF Mono', Menlo, monospace">handcode-tutor</text>
+    </g>
+
+    <!-- accent underline -->
+    <line class="brand-bar" x1="60" y1="200" x2="200" y2="200"
+          stroke="#5dd4f5" stroke-width="2.5" stroke-linecap="round"/>
+
+    <!-- Subtitle -->
+    <text class="brand-sub" x="60" y="232" font-size="19" fill="#00ff41" opacity="0.85"
+          font-family="ui-monospace, 'SF Mono', Menlo, monospace">learn by typing.</text>
+
+    <!-- Tag (italic Georgia, like a margin note) -->
+    <text class="brand-tag" x="60" y="262" font-size="14" font-style="italic"
+          fill="#7eb89a" letter-spacing="0.5"
+          font-family="Georgia, 'Songti SC', serif">type it. break it. own it.</text>
+
+    <!-- Tiny meta strip -->
+    <g class="brand-meta" opacity="0.5">
+      <text x="60" y="305" font-size="10" fill="#5dd4f5" letter-spacing="2"
+            font-family="ui-monospace, 'SF Mono', Menlo, monospace">[ AGENT SKILL ]</text>
+      <text x="180" y="305" font-size="10" fill="#f1fa8c" letter-spacing="2"
+            font-family="ui-monospace, 'SF Mono', Menlo, monospace">[ MIT ]</text>
+      <text x="240" y="305" font-size="10" fill="#ff9f6c" letter-spacing="2"
+            font-family="ui-monospace, 'SF Mono', Menlo, monospace">[ v0.1 ]</text>
+    </g>
+
+    <!-- Margin note: small italic at very bottom of brand area -->
+    <text x="60" y="350" font-size="11" font-style="italic" opacity="0.45" fill="#7eb89a"
+          font-family="Georgia, 'Songti SC', serif">// mistakes are where I learn.</text>
+  </g>
+
+  <!-- ===== RIGHT: Terminal (x: 620-1140, y: 40-240) ===== -->
+  <g class="terminal-frame">
+    <!-- Frame with very subtle glass-like fill -->
+    <rect x="620" y="40" width="520" height="200" rx="10"
+          fill="#040c08" stroke="#5dd4f5" stroke-width="1" stroke-opacity="0.35"/>
+    <!-- Title bar -->
+    <rect x="620" y="40" width="520" height="26" rx="10"
+          fill="#001508" stroke="#5dd4f5" stroke-width="1" stroke-opacity="0.25"/>
+    <rect x="620" y="60" width="520" height="6"
+          fill="#001508" stroke="none"/>
+    <!-- Traffic lights -->
+    <circle cx="640" cy="53" r="4.5" fill="#ff5f56" opacity="0.85"/>
+    <circle cx="656" cy="53" r="4.5" fill="#ffbd2e" opacity="0.7"/>
+    <circle cx="672" cy="53" r="4.5" fill="#27c93f" opacity="0.85"/>
+    <!-- Title -->
+    <text x="880" y="58" text-anchor="middle" fill="#5dd4f5" opacity="0.6"
+          font-size="11" letter-spacing="2"
+          font-family="ui-monospace, 'SF Mono', Menlo, monospace">— bash —</text>
+  </g>
+
+  <!-- ===== Terminal content (font 18 mono, glow) ===== -->
+  <g filter="url(#softGlow)" font-family="ui-monospace, 'SF Mono', Menlo, monospace"
+     font-size="18" font-weight="500">
+
+    <!-- Line 1 prefix: "$ npx skills update " (syntax-highlighted) -->
+    <text x="646" y="110">
+      <tspan class="c0"  fill="#e6e6e6">$</tspan><tspan class="c1"  fill="#e6e6e6" xml:space="preserve"> </tspan><tspan class="c2"  fill="#5dd4f5">n</tspan><tspan class="c3"  fill="#5dd4f5">p</tspan><tspan class="c4"  fill="#5dd4f5">x</tspan><tspan class="c5"  fill="#e6e6e6" xml:space="preserve"> </tspan><tspan class="c6"  fill="#5dd4f5">s</tspan><tspan class="c7"  fill="#5dd4f5">k</tspan><tspan class="c8"  fill="#5dd4f5">i</tspan><tspan class="c9"  fill="#5dd4f5">l</tspan><tspan class="c10" fill="#5dd4f5">l</tspan><tspan class="c11" fill="#5dd4f5">s</tspan><tspan class="c12" fill="#e6e6e6" xml:space="preserve"> </tspan><tspan class="c13" fill="#c792ea">u</tspan><tspan class="c14" fill="#c792ea">p</tspan><tspan class="c15" fill="#c792ea">d</tspan><tspan class="c16" fill="#c792ea">a</tspan><tspan class="c17" fill="#c792ea">t</tspan><tspan class="c18" fill="#c792ea">e</tspan><tspan class="c19" fill="#e6e6e6" xml:space="preserve"> </tspan>
+    </text>
+
+    <!-- WRONG PREFIX "larksuit" — red, 8 chars. Parent fadeIn just before typing, fadeOut at color-switch moment -->
+    <text class="wrong-prefix-text" x="866" y="110" style="opacity:0" fill="#ff5555">
+      <tspan class="w0">l</tspan><tspan class="w1">a</tspan><tspan class="w2">r</tspan><tspan class="w3">k</tspan><tspan class="w4">s</tspan><tspan class="w5">u</tspan><tspan class="w6">i</tspan><tspan class="w7">t</tspan>
+    </text>
+
+    <!-- WRONG TAIL "/cli -g" — red, 7 chars. Each char fades out right-to-left simulating backspace -->
+    <text class="wrong-tail-text" x="954" y="110" style="opacity:0" fill="#ff5555">
+      <tspan class="w8">/</tspan><tspan class="w9">c</tspan><tspan class="w10">l</tspan><tspan class="w11">i</tspan><tspan class="w12" xml:space="preserve"> </tspan><tspan class="w13">-</tspan><tspan class="w14">g</tspan>
+    </text>
+
+    <!-- Red strike under "larksuit" -->
+    <line class="wrong-strike" x1="864" y1="118" x2="954" y2="118"
+          stroke="#ff5555" stroke-width="2.5" stroke-linecap="round" style="opacity:0"/>
+
+    <!-- RIGHT PREFIX "larksuit" — yellow, 8 chars. Fades in at the color-switch moment (same x as wrong-prefix) -->
+    <text class="right-prefix-text" x="866" y="110" style="opacity:0" fill="#f1fa8c">
+      <tspan>l</tspan><tspan>a</tspan><tspan>r</tspan><tspan>k</tspan><tspan>s</tspan><tspan>u</tspan><tspan>i</tspan><tspan>t</tspan>
+    </text>
+
+    <!-- RIGHT ADDED "e/cli -g" — typewriter from left after color switch. Starts at x=954 (right after 'larksuit') -->
+    <text x="954" y="110">
+      <tspan class="re"  fill="#f1fa8c">e</tspan><tspan class="ra0" fill="#f1fa8c">/</tspan><tspan class="ra1" fill="#f1fa8c">c</tspan><tspan class="ra2" fill="#f1fa8c">l</tspan><tspan class="ra3" fill="#f1fa8c">i</tspan><tspan class="ra4" fill="#e6e6e6" xml:space="preserve"> </tspan><tspan class="ra5" fill="#ffb86c">-</tspan><tspan class="ra6" fill="#ffb86c">g</tspan>
+    </text>
+
+    <!-- Line 2 response: "Updating larksuite/cli..." (matrix green, dimmer) -->
+    <text x="646" y="148" fill="#7bff8c">
+      <tspan class="p0">U</tspan><tspan class="p1">p</tspan><tspan class="p2">d</tspan><tspan class="p3">a</tspan><tspan class="p4">t</tspan><tspan class="p5">i</tspan><tspan class="p6">n</tspan><tspan class="p7">g</tspan><tspan class="p8" xml:space="preserve"> </tspan><tspan class="p9">l</tspan><tspan class="p10">a</tspan><tspan class="p11">r</tspan><tspan class="p12">k</tspan><tspan class="p13">s</tspan><tspan class="p14">u</tspan><tspan class="p15">i</tspan><tspan class="p16">t</tspan><tspan class="p17">e</tspan><tspan class="p18">/</tspan><tspan class="p19">c</tspan><tspan class="p20">l</tspan><tspan class="p21">i</tspan><tspan class="p22">.</tspan><tspan class="p23">.</tspan><tspan class="p24">.</tspan>
+    </text>
+
+    <!-- Line 3: new prompt + final cursor -->
+    <text class="new-prompt" x="646" y="186" fill="#e6e6e6">$</text>
+    <rect class="term-final-cursor" x="664" y="170" width="10" height="20" fill="#00ff41"/>
+  </g>
+
+  <!-- ===== Bubble 1: RED — "missing 'e'" ===== -->
+  <g class="bubble-red" style="opacity:0">
+    <rect x="828" y="74" width="116" height="22" rx="11"
+          fill="#3a0d0d" stroke="#ff5555" stroke-width="1.3" filter="url(#bubbleGlow)"/>
+    <!-- pointer triangle pointing down to wrong "larksuit" -->
+    <polygon points="888,96 902,108 902,96"
+             fill="#3a0d0d" stroke="#ff5555" stroke-width="1.3"/>
+    <text x="886" y="89" text-anchor="middle" fill="#ff5555"
+          font-size="11" letter-spacing="0.5"
+          font-family="ui-monospace, 'SF Mono', Menlo, monospace">missing 'e' ?</text>
+  </g>
+
+  <!-- ===== Bubble 2: GREEN — "✓ verified" — aligned with response line baseline ===== -->
+  <g class="bubble-green" style="opacity:0">
+    <rect x="970" y="133" width="118" height="22" rx="11"
+          fill="#072810" stroke="#00ff41" stroke-width="1.3" filter="url(#bubbleGlow)"/>
+    <!-- pointer left toward response text baseline (y=148) -->
+    <polygon points="970,143 958,138 958,148"
+             fill="#072810" stroke="#00ff41" stroke-width="1.3"/>
+    <text x="1029" y="148" text-anchor="middle" fill="#00ff41"
+          font-size="11" letter-spacing="0.5"
+          font-family="ui-monospace, 'SF Mono', Menlo, monospace">✓ verified.</text>
+  </g>
+
+  <!-- ===== Signature ===== -->
+  <text x="1140" y="362" text-anchor="end" font-size="9" opacity="0.35"
+        fill="#5dd4f5" letter-spacing="2"
+        font-family="ui-monospace, 'SF Mono', Menlo, monospace">MADE WITH CLAUDE CODE</text>
+</svg>
